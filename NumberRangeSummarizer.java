@@ -30,7 +30,7 @@ public interface NumberRangeSummarizer {
 
 }
 
-class DemoClass implements NumberRangeSummarizer{
+class Worker implements NumberRangeSummarizer{
 
     public Collection<Integer> collect(String input){
         Collection<Integer> Vars = new ArrayList<Integer>();
@@ -58,8 +58,6 @@ class DemoClass implements NumberRangeSummarizer{
                 begin = false;
             }
             else if (prev + 1 == nums){
-                System.out.println("prev = "+ (prev+1));
-                System.out.println("nums = "+nums);
                 holder++;
             }
             else if(holder > 0){
@@ -76,7 +74,7 @@ class DemoClass implements NumberRangeSummarizer{
     }
 
     public static void main(String[] args){
-        DemoClass demo = new DemoClass();
+        Worker demo = new Worker();
         Collection<Integer> tester = demo.collect("1,3,6,7,8,12,13,14,15,21,22,23,24,31");
         System.out.println(demo.summarizeCollection(tester));
     }
